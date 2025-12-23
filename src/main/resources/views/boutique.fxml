@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.BoutiqueController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Navigation">
+               <items>
+                  <MenuItem onAction="#handleAccueil" text="Accueil" />
+                  <MenuItem onAction="#handleGalerie" text="Galerie" />
+                  <MenuItem onAction="#handlePanier" text="Mon Panier" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox spacing="10.0" style="-fx-padding: 10;">
+         <children>
+            <Label text="Filtres" style="-fx-font-weight: bold;" />
+            <Label text="Catégorie:" />
+            <ComboBox fx:id="comboCategorie" />
+            <Label text="Artiste:" />
+            <ComboBox fx:id="comboArtiste" />
+            <Label text="Prix min:" />
+            <TextField fx:id="fieldPrixMin" />
+            <Label text="Prix max:" />
+            <TextField fx:id="fieldPrixMax" />
+            <Button onAction="#handleRecherche" text="Rechercher" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 10;">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Boutique en Ligne" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="labelPanier" text="Panier: 0 article(s)" />
+               </children>
+            </HBox>
+            <FlowPane fx:id="flowPaneOeuvres" hgap="10.0" vgap="10.0" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

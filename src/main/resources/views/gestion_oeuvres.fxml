@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.GestionOeuvresController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Admin">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Dashboard" />
+                  <MenuItem onAction="#handleGestionOeuvres" text="Gestion des Œuvres" />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox spacing="10.0" style="-fx-padding: 15;">
+         <children>
+            <Label text="Formulaire" style="-fx-font-weight: bold;" />
+            <Label text="Titre:" />
+            <TextField fx:id="fieldTitre" />
+            <Label text="Année:" />
+            <TextField fx:id="fieldAnnee" />
+            <Label text="Dimensions:" />
+            <TextField fx:id="fieldDimensions" />
+            <Label text="Prix:" />
+            <TextField fx:id="fieldPrix" />
+            <Label text="Image:" />
+            <TextField fx:id="fieldCheminImage" />
+            <Label text="Artiste:" />
+            <ComboBox fx:id="comboArtiste" />
+            <Label text="Catégorie:" />
+            <ComboBox fx:id="comboCategorie" />
+            <HBox spacing="10.0">
+               <children>
+                  <Button onAction="#handleAjouter" text="Ajouter" />
+                  <Button onAction="#handleModifier" text="Modifier" />
+                  <Button onAction="#handleSupprimer" text="Supprimer" />
+                  <Button onAction="#handleReset" text="Réinitialiser" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 15;">
+         <children>
+            <Label text="Gestion des Œuvres" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+            <TableView fx:id="tableOeuvres">
+               <columns>
+                  <TableColumn fx:id="colId" text="ID" />
+                  <TableColumn fx:id="colTitre" text="Titre" />
+                  <TableColumn fx:id="colArtiste" text="Artiste" />
+                  <TableColumn fx:id="colCategorie" text="Catégorie" />
+                  <TableColumn fx:id="colPrix" text="Prix" />
+                  <TableColumn fx:id="colAnnee" text="Année" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

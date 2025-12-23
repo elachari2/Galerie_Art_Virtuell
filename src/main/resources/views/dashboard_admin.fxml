@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.DashboardAdminController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Admin">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Dashboard" />
+                  <MenuItem onAction="#handleGestionOeuvres" text="Gestion des Œuvres" />
+                  <MenuItem onAction="#handleGestionArtistes" text="Gestion des Artistes" />
+                  <MenuItem onAction="#handleGestionCommandes" text="Gestion des Commandes" />
+                  <MenuItem onAction="#handleGestionUtilisateurs" text="Gestion des Utilisateurs" />
+                  <MenuItem onAction="#handleGestionStock" text="Gestion du Stock" />
+                  <SeparatorMenuItem />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="20.0" style="-fx-padding: 20;">
+         <children>
+            <Label text="Dashboard Administrateur" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #e3f2fd;">
+                     <children>
+                        <Label text="Nombre d'Œuvres" style="-fx-font-weight: bold;" />
+                        <Label fx:id="labelNombreOeuvres" text="0" style="-fx-font-size: 32;" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #f3e5f5;">
+                     <children>
+                        <Label text="Nombre d'Artistes" style="-fx-font-weight: bold;" />
+                        <Label fx:id="labelNombreArtistes" text="0" style="-fx-font-size: 32;" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #e8f5e9;">
+                     <children>
+                        <Label text="Commandes en attente" style="-fx-font-weight: bold;" />
+                        <Label fx:id="labelCommandesAttente" text="0" style="-fx-font-size: 32;" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #fff3e0;">
+                     <children>
+                        <Label text="Nombre de Clients" style="-fx-font-weight: bold;" />
+                        <Label fx:id="labelNombreClients" text="0" style="-fx-font-size: 32;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Commandes Récentes" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+            <TableView fx:id="tableCommandesRecentes">
+               <columns>
+                  <TableColumn fx:id="colId" text="ID" />
+                  <TableColumn fx:id="colClient" text="Client" />
+                  <TableColumn fx:id="colDate" text="Date" />
+                  <TableColumn fx:id="colMontant" text="Montant" />
+                  <TableColumn fx:id="colStatut" text="Statut" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

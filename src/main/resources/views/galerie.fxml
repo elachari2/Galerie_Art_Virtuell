@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.GalerieController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Navigation">
+               <items>
+                  <MenuItem onAction="#handleAccueil" text="Accueil" />
+                  <MenuItem onAction="#handleBoutique" text="Boutique" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox spacing="10.0" style="-fx-padding: 10;">
+         <children>
+            <Label text="Filtres" style="-fx-font-weight: bold;" />
+            <Label text="Catégorie:" />
+            <ComboBox fx:id="comboCategorie" onAction="#handleFiltreCategorie" />
+            <Label text="Artiste:" />
+            <ComboBox fx:id="comboArtiste" onAction="#handleFiltreArtiste" />
+            <Label text="Prix max:" />
+            <TextField fx:id="fieldPrixMax" />
+            <Button onAction="#handleRecherche" text="Rechercher" />
+            <Button onAction="#handleResetFiltres" text="Réinitialiser" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 10;">
+         <children>
+            <Label fx:id="labelNombreOeuvres" text="Nombre d'œuvres: 0" />
+            <TableView fx:id="tableOeuvres">
+               <columns>
+                  <TableColumn fx:id="colId" text="ID" />
+                  <TableColumn fx:id="colTitre" text="Titre" />
+                  <TableColumn fx:id="colArtiste" text="Artiste" />
+                  <TableColumn fx:id="colCategorie" text="Catégorie" />
+                  <TableColumn fx:id="colPrix" text="Prix" />
+                  <TableColumn fx:id="colAnnee" text="Année" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

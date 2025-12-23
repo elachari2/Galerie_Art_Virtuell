@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.LoginController">
+   <center>
+      <VBox alignment="CENTER" spacing="20.0" style="-fx-padding: 50;">
+         <children>
+            <Label text="Connexion / Inscription" style="-fx-font-size: 28; -fx-font-weight: bold;" />
+            <TabPane fx:id="tabPane">
+               <tabs>
+                  <Tab text="Connexion">
+                     <content>
+                        <VBox spacing="15.0" style="-fx-padding: 20;">
+                           <children>
+                              <Label fx:id="labelErreurConnexion" textFill="RED" visible="false" />
+                              <Label text="Email:" />
+                              <TextField fx:id="fieldEmailConnexion" />
+                              <Label text="Mot de passe:" />
+                              <PasswordField fx:id="fieldMotDePasseConnexion" />
+                              <Button onAction="#handleConnexion" text="Se connecter" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Inscription">
+                     <content>
+                        <VBox spacing="15.0" style="-fx-padding: 20;">
+                           <children>
+                              <Label fx:id="labelErreurInscription" textFill="RED" visible="false" />
+                              <Label text="Nom:" />
+                              <TextField fx:id="fieldNomInscription" />
+                              <Label text="Prénom:" />
+                              <TextField fx:id="fieldPrenomInscription" />
+                              <Label text="Email:" />
+                              <TextField fx:id="fieldEmailInscription" />
+                              <Label text="Mot de passe:" />
+                              <PasswordField fx:id="fieldMotDePasseInscription" />
+                              <Label text="Téléphone:" />
+                              <TextField fx:id="fieldTelephoneInscription" />
+                              <Label text="Adresse:" />
+                              <TextField fx:id="fieldAdresseInscription" />
+                              <Button onAction="#handleInscription" text="S'inscrire" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Button onAction="#handleRetour" text="Retour à l'accueil" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.GestionUtilisateursController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Admin">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Dashboard" />
+                  <MenuItem onAction="#handleGestionUtilisateurs" text="Gestion des Utilisateurs" />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 20;">
+         <children>
+            <Label text="Gestion des Utilisateurs" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <HBox spacing="10.0">
+               <children>
+                  <Label text="Filtre par rôle:" />
+                  <ComboBox fx:id="comboRole" onAction="#handleFiltreRole" />
+                  <Button onAction="#handleResetFiltre" text="Réinitialiser" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableUtilisateurs">
+               <columns>
+                  <TableColumn fx:id="colId" text="ID" />
+                  <TableColumn fx:id="colNom" text="Nom" />
+                  <TableColumn fx:id="colPrenom" text="Prénom" />
+                  <TableColumn fx:id="colEmail" text="Email" />
+                  <TableColumn fx:id="colRole" text="Rôle" />
+                  <TableColumn fx:id="colDateInscription" text="Date d'inscription" />
+                  <TableColumn fx:id="colActions" text="Actions" />
+               </columns>
+            </TableView>
+            <HBox spacing="10.0">
+               <children>
+                  <Button onAction="#handleVoirDetails" text="Voir les détails" />
+                  <Button onAction="#handleSupprimer" text="Supprimer" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

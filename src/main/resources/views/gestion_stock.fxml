@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.GestionStockController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Admin">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Dashboard" />
+                  <MenuItem onAction="#handleGestionStock" text="Gestion du Stock" />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 20;">
+         <children>
+            <Label text="Gestion du Stock" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <Label text="Note: Cette fonctionnalité est optionnelle. Vous pouvez l'implémenter si vous souhaitez gérer les quantités en stock." />
+            <TableView fx:id="tableStock">
+               <columns>
+                  <TableColumn fx:id="colOeuvre" text="Œuvre" />
+                  <TableColumn fx:id="colQuantite" text="Quantité en stock" />
+                  <TableColumn fx:id="colActions" text="Actions" />
+               </columns>
+            </TableView>
+            <HBox spacing="10.0">
+               <children>
+                  <Label text="Quantité:" />
+                  <TextField fx:id="fieldQuantite" />
+                  <Button onAction="#handleModifierStock" text="Modifier le stock" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

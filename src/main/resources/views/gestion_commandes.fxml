@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.GestionCommandesController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Admin">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Dashboard" />
+                  <MenuItem onAction="#handleGestionCommandes" text="Gestion des Commandes" />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 20;">
+         <children>
+            <Label text="Gestion des Commandes" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <HBox spacing="10.0">
+               <children>
+                  <Label text="Filtre par statut:" />
+                  <ComboBox fx:id="comboStatut" onAction="#handleFiltreStatut" />
+                  <Button onAction="#handleResetFiltre" text="Réinitialiser" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableCommandes">
+               <columns>
+                  <TableColumn fx:id="colId" text="ID" />
+                  <TableColumn fx:id="colClient" text="Client" />
+                  <TableColumn fx:id="colDate" text="Date" />
+                  <TableColumn fx:id="colMontant" text="Montant" />
+                  <TableColumn fx:id="colStatut" text="Statut" />
+                  <TableColumn fx:id="colActions" text="Actions" />
+               </columns>
+            </TableView>
+            <HBox spacing="10.0">
+               <children>
+                  <Button onAction="#handleVoirDetails" text="Voir les détails" />
+                  <Button onAction="#handleValider" text="Valider la commande" />
+                  <Button onAction="#handleAnnuler" text="Annuler la commande" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.PanierController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Navigation">
+               <items>
+                  <MenuItem onAction="#handleAccueil" text="Accueil" />
+                  <MenuItem onAction="#handleBoutique" text="Boutique" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 20;">
+         <children>
+            <Label text="Mon Panier" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <TableView fx:id="tablePanier">
+               <columns>
+                  <TableColumn fx:id="colOeuvre" text="Œuvre" />
+                  <TableColumn fx:id="colPrixUnitaire" text="Prix unitaire" />
+                  <TableColumn fx:id="colQuantite" text="Quantité" />
+                  <TableColumn fx:id="colSousTotal" text="Sous-total" />
+                  <TableColumn fx:id="colActions" text="Actions" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <Label fx:id="labelTotal" text="Total: 0.00 €" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+                  <Button onAction="#handleViderPanier" text="Vider le panier" />
+                  <Button onAction="#handleCommander" text="Passer la commande" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

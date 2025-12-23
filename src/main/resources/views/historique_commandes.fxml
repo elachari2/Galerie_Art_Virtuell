@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.HistoriqueCommandesController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Client">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Tableau de bord" />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 20;">
+         <children>
+            <Label text="Historique des Commandes" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <TableView fx:id="tableCommandes">
+               <columns>
+                  <TableColumn fx:id="colId" text="ID" />
+                  <TableColumn fx:id="colDate" text="Date" />
+                  <TableColumn fx:id="colMontant" text="Montant" />
+                  <TableColumn fx:id="colStatut" text="Statut" />
+                  <TableColumn fx:id="colActions" text="Actions" />
+               </columns>
+            </TableView>
+            <HBox spacing="10.0">
+               <children>
+                  <Button onAction="#handleVoirDetails" text="Voir les détails" />
+                  <Button onAction="#handleAnnulerCommande" text="Annuler la commande" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

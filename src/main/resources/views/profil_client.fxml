@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.ProfilClientController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Client">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Tableau de bord" />
+                  <MenuItem onAction="#handleProfil" text="Mon Profil" />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="15.0" style="-fx-padding: 30;">
+         <children>
+            <Label text="Mon Profil" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <VBox spacing="10.0">
+               <children>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label text="Nom:" />
+                        <TextField fx:id="fieldNom" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label text="Prénom:" />
+                        <TextField fx:id="fieldPrenom" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label text="Email:" />
+                        <TextField fx:id="fieldEmail" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label text="Téléphone:" />
+                        <TextField fx:id="fieldTelephone" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label text="Adresse:" />
+                        <TextField fx:id="fieldAdresse" />
+                     </children>
+                  </HBox>
+                  <Separator />
+                  <Label text="Changer le mot de passe" style="-fx-font-weight: bold;" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label text="Nouveau mot de passe:" />
+                        <PasswordField fx:id="fieldNouveauMotDePasse" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label text="Confirmer:" />
+                        <PasswordField fx:id="fieldConfirmerMotDePasse" />
+                     </children>
+                  </HBox>
+                  <Button onAction="#handleSauvegarder" text="Sauvegarder les modifications" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

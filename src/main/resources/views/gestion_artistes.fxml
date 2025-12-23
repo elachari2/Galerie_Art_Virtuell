@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.GestionArtistesController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Admin">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Dashboard" />
+                  <MenuItem onAction="#handleGestionArtistes" text="Gestion des Artistes" />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox spacing="10.0" style="-fx-padding: 15;">
+         <children>
+            <Label text="Formulaire" style="-fx-font-weight: bold;" />
+            <Label text="Nom:" />
+            <TextField fx:id="fieldNom" />
+            <Label text="Prénom:" />
+            <TextField fx:id="fieldPrenom" />
+            <Label text="Date de naissance:" />
+            <DatePicker fx:id="datePickerNaissance" />
+            <Label text="Nationalité:" />
+            <TextField fx:id="fieldNationalite" />
+            <Label text="Biographie:" />
+            <TextArea fx:id="textAreaBiographie" prefRowCount="3" wrapText="true" />
+            <HBox spacing="10.0">
+               <children>
+                  <Button onAction="#handleAjouter" text="Ajouter" />
+                  <Button onAction="#handleModifier" text="Modifier" />
+                  <Button onAction="#handleSupprimer" text="Supprimer" />
+                  <Button onAction="#handleReset" text="Réinitialiser" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox spacing="10.0" style="-fx-padding: 15;">
+         <children>
+            <Label text="Gestion des Artistes" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+            <TableView fx:id="tableArtistes">
+               <columns>
+                  <TableColumn fx:id="colId" text="ID" />
+                  <TableColumn fx:id="colNom" text="Nom" />
+                  <TableColumn fx:id="colPrenom" text="Prénom" />
+                  <TableColumn fx:id="colNationalite" text="Nationalité" />
+                  <TableColumn fx:id="colDateNaissance" text="Date de naissance" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

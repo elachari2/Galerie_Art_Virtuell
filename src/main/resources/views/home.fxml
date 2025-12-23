@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.HomeController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Accueil">
+               <items>
+                  <MenuItem onAction="#handleAccueil" text="Page d'Accueil" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Galerie">
+               <items>
+                  <MenuItem onAction="#handleGalerie" text="Voir la Galerie" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Boutique">
+               <items>
+                  <MenuItem onAction="#handleBoutique" text="Boutique en Ligne" />
+                  <MenuItem onAction="#handlePanier" text="Mon Panier" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Contact">
+               <items>
+                  <MenuItem onAction="#handleContact" text="Contact / À Propos" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Compte">
+               <items>
+                  <MenuItem fx:id="menuLogin" onAction="#handleLogin" text="Connexion" />
+                  <MenuItem fx:id="menuDeconnexion" onAction="#handleDeconnexion" text="Déconnexion" visible="false" />
+                  <SeparatorMenuItem />
+                  <MenuItem fx:id="menuEspaceClient" onAction="#handleEspaceClient" text="Mon Espace" visible="false" />
+                  <MenuItem fx:id="menuEspaceAdmin" onAction="#handleEspaceAdmin" text="Espace Admin" visible="false" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Label text="Galerie d'Art Virtuel">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label text="Bienvenue dans notre galerie d'art virtuel" />
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button onAction="#handleGalerie" text="Découvrir la Galerie" />
+                  <Button onAction="#handleBoutique" text="Visiter la Boutique" />
+                  <Button onAction="#handleContact" text="Nous Contacter" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

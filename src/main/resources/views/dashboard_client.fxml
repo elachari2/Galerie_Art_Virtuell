@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.DashboardClientController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="Espace Client">
+               <items>
+                  <MenuItem onAction="#handleDashboard" text="Tableau de bord" />
+                  <MenuItem onAction="#handleProfil" text="Mon Profil" />
+                  <MenuItem onAction="#handleHistorique" text="Historique des commandes" />
+                  <MenuItem onAction="#handleFavoris" text="Mes Favoris" />
+                  <MenuItem onAction="#handlePanier" text="Mon Panier" />
+                  <SeparatorMenuItem />
+                  <MenuItem onAction="#handleDeconnexion" text="Déconnexion" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox spacing="20.0" style="-fx-padding: 20;">
+         <children>
+            <Label text="Tableau de Bord Client" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+            <HBox spacing="20.0">
+               <children>
+                  <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #f0f0f0;">
+                     <children>
+                        <Label text="Mes Commandes" style="-fx-font-weight: bold;" />
+                        <Label fx:id="labelNombreCommandes" text="Nombre: 0" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #f0f0f0;">
+                     <children>
+                        <Label text="Mes Favoris" style="-fx-font-weight: bold;" />
+                        <Label fx:id="labelNombreFavoris" text="Nombre: 0" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0" style="-fx-padding: 15; -fx-background-color: #f0f0f0;">
+                     <children>
+                        <Label text="Mon Panier" style="-fx-font-weight: bold;" />
+                        <Label fx:id="labelArticlesPanier" text="Articles: 0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Dernières Commandes" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+            <TableView fx:id="tableCommandes">
+               <columns>
+                  <TableColumn fx:id="colCommandeId" text="ID" />
+                  <TableColumn fx:id="colCommandeDate" text="Date" />
+                  <TableColumn fx:id="colCommandeMontant" text="Montant" />
+                  <TableColumn fx:id="colCommandeStatut" text="Statut" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+
